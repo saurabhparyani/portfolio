@@ -5,6 +5,8 @@ import ThemeSwitch from "@/components/theme-switch";
 import Header from "@/components/Header";
 import ThemeContextProvider from "@/context/theme-context";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -29,9 +31,8 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            {/* <Footer /> */}
-
-            {/* <Toaster position="top-right" /> */}
+            <Footer />
+            <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
