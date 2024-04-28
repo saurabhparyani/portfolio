@@ -5,9 +5,13 @@ import React from 'react'
 import { links, socials } from '@/lib/data'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useActiveSectionContext } from "@/context/active-section-context";
+
 
 
 export default function Header() {
+    const { activeSection, setActiveSection, setTimeOfLastClick } =
+        useActiveSectionContext();
     return (
         <div className='container flex items-center justify-between'>
             <header className="z-[999] relative">
@@ -29,30 +33,30 @@ export default function Header() {
                                 <Link
                                     className={clsx(
                                         "flex w-full items-center text-xl justify-center p-2 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
-                                        // {
-                                        //     "text-gray-950 dark:text-gray-200":
-                                        //         activeSection === link.name,
-                                        // }
+                                        {
+                                            "text-gray-950 dark:text-gray-200":
+                                                activeSection === link.name,
+                                        }
                                     )}
                                     href={link.hash}
-                                // onClick={() => {
-                                //     setActiveSection(link.name);
-                                //     setTimeOfLastClick(Date.now());
-                                // }}
+                                    onClick={() => {
+                                        setActiveSection(link.name);
+                                        setTimeOfLastClick(Date.now());
+                                    }}
                                 >
                                     {link.name}
 
-                                    {/* {link.name === activeSection && (
-                                    <motion.span
-                                        className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
-                                        layoutId="activeSection"
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 380,
-                                            damping: 30,
-                                        }}
-                                    ></motion.span>
-                                )} */}
+                                    {link.name === activeSection && (
+                                        <motion.span
+                                            className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                                            layoutId="activeSection"
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 380,
+                                                damping: 30,
+                                            }}
+                                        ></motion.span>
+                                    )}
                                 </Link>
                             </motion.li>
                         ))}
