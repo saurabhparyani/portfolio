@@ -74,7 +74,7 @@ export const projectsData = [
         tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Typescript"],
         imageUrl: rebind,
         githublink: "https://github.com/saurabhparyani/rebind",
-        website: "https://rebind-dev.vercel.app/",
+        website: "https://rebind.saurabhparyani.dev/",
         githubicon: SiGithub,
         websiteicon: ImLink
     },
