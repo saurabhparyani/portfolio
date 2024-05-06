@@ -68,10 +68,10 @@ export const socials = [
 
 export const projectsData = [
     {
-        title: "rebind",
+        title: "ReBind",
         description:
-            "desc title 1",
-        tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+            "A note-taking SaaS application built with Next.js 14",
+        tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Typescript"],
         imageUrl: rebind,
         githublink: "https://github.com/saurabhparyani/rebind",
         website: "https://rebind-dev.vercel.app/",
@@ -79,10 +79,10 @@ export const projectsData = [
         websiteicon: ImLink
     },
     {
-        title: "txtr",
+        title: "TXTR",
         description:
-            "desc title 2",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+            "A realtime chat app that lets users send messages super fast!",
+        tags: ["Next.js", "Redis", "Zod", "Pusher", "Tailwind", "TypeScript"],
         imageUrl: txtr,
         githublink: "https://github.com/saurabhparyani/txtr",
         website: "https://txtr.vercel.app/",
@@ -92,7 +92,7 @@ export const projectsData = [
     {
         title: "blogapp",
         description:
-            "desc title 3",
+            "A blog-app like Medium where users can create blog posts, view them and update them.",
         tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
         imageUrl: blogapp,
         githublink: "https://github.com/saurabhparyani/blogapp",
