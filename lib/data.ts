@@ -1,8 +1,10 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import rebind from "@/public/rebind_image.png";
-import txtr from "@/public/txtr_image.png";
-import blogapp from "@/public/blogapp_image.png";
+import txtr from "@/public/txtr.png";
+import tonic from "@/public/tonic.png"
+import blogapp from "@/public/blogapp_image.png"
+import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { ImLink } from "react-icons/im";
 import { LuGraduationCap } from "react-icons/lu";
@@ -36,10 +38,10 @@ export const links = [
 
 // export const experiencesData = [
 //     {
-//         title: "Web Developer Intern • Marriott International, Inc.",
+//         title: "Web Developer Intern • Wells Fargo, Inc.",
 //         location: "Hyderabad, India",
 //         description:
-//             "I worked as a web developer intern for my client, Marriott and worked on Express.js and Node.js",
+//             "I worked as a web developer intern for my client, Wells Fargo and worked on...",
 //         icon: React.createElement(CgWorkAlt),
 //         date: "Jan 2024 - April 2024",
 //     },
@@ -70,11 +72,33 @@ export const projectsData = [
     {
         title: "ReBind",
         description:
-            "A note-taking SaaS application built with Next.js 14",
+            "A note-taking SaaS application built with Next.js 14.",
         tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Typescript"],
         imageUrl: rebind,
         githublink: "https://github.com/saurabhparyani/rebind",
         website: "https://rebind.saurabhparyani.dev/",
+        githubicon: SiGithub,
+        websiteicon: ImLink
+    },
+    {
+        title: "Tonic",
+        description:
+            "A Healthcare doctor booking app for users and doctors.",
+        tags: ["React", "Express", "MongoDB", "JWT", "Tailwind","Stripe","JavaScript"],
+        imageUrl: tonic,
+        githublink: "https://github.com/saurabhparyani/tonic",
+        website: "https://tonic.saurabhparyani.dev",
+        githubicon: SiGithub,
+        websiteicon: ImLink
+    },
+    {
+        title: "Portfolio",
+        description:
+            "A personal web development portfolio website to showcase my projects.",
+        tags: ["Next.js","Tailwind", "Shadcn UI", "Framer", "EmailJS"],
+        imageUrl: portfolio,
+        githublink: "https://github.com/saurabhparyani/portfolio",
+        website: "https://saurabhparyani.dev",
         githubicon: SiGithub,
         websiteicon: ImLink
     },
@@ -100,6 +124,7 @@ export const projectsData = [
         githubicon: SiGithub,
         websiteicon: ImLink
     },
+   
 ] as const;
 
 export const skillsData = [
@@ -107,17 +132,20 @@ export const skillsData = [
     "CSS",
     "JavaScript",
     "TypeScript",
+    "Python",
+    "Node.js",
+    "Express",
     "React",
     "Next.js",
-    "Node.js",
     "Git",
     "Tailwind",
+    "Zod",
     "Prisma",
     "MongoDB",
     "Recoil",
-    "Express",
+    "Redux",
     "PostgreSQL",
-    "Python",
+    "Redis",
     "Django",
     "Framer Motion",
 ] as const;

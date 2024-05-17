@@ -63,11 +63,11 @@ export default function Header() {
                     </ul>
                 </nav>
             </header>
-            <div className='flex gap-7 -mt-48 mr-20'>
+            <div className='flex gap-7 -mt-8 ml-5  sm:-mt-48 md:mr-20'>
                 {socials.map((social, index) => {
                     const Icon = social.Icon;
                     return <Link href={social.link} target='_blank' key={index} aria-label={social.label}>
-                        <Icon className='w-8 h-8 hover:scale-125 transition-all' />
+                        <Icon className='w-8 h-8  hover:scale-125 transition-all' />
                     </Link>
                 })}
             </div>
