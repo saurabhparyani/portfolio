@@ -38,7 +38,7 @@ export const links = [
 
 // export const experiencesData = [
 //     {
-//         title: "Web Developer Intern • Wells Fargo, Inc.",
+//         title: "Web Developer Intern • Wells Fargo",
 //         location: "Hyderabad, India",
 //         description:
 //             "I worked as a web developer intern for my client, Wells Fargo and worked on...",
@@ -117,7 +117,7 @@ export const projectsData = [
         title: "blogapp",
         description:
             "A blog-app like Medium where users can create blog posts, view them and update them.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+        tags: ["React", "Cloudflare Workers", "Hono", "Postgres", "Prisma", "zod"],
         imageUrl: blogapp,
         githublink: "https://github.com/saurabhparyani/blogapp",
         website: "https://blog-saurabhparyani.vercel.app/",
@@ -135,6 +135,7 @@ export const skillsData = [
     "Python",
     "Node.js",
     "Express",
+    "Honojs",
     "React",
     "Next.js",
     "Git",
@@ -146,6 +147,10 @@ export const skillsData = [
     "Redux",
     "PostgreSQL",
     "Redis",
+    "Docker",
+    "Turborepo",
+    "AWS",
+    "Cloudflare Workers",
     "Django",
     "Framer Motion",
 ] as const;
