@@ -1,9 +1,12 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import rebind from "@/public/rebind_image.png";
+import tailwindmarketplace from "@/public/tailwind-marketplace.png";
 import txtr from "@/public/txtr.png";
 import tonic from "@/public/tonic.png"
-import blogapp from "@/public/blogapp_image.png"
+import blogappimg from "@/public/blogapp_image.png"
+import blogapp from "@/public/blogapp.png"
+
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { ImLink } from "react-icons/im";
@@ -70,16 +73,17 @@ export const socials = [
 
 export const projectsData = [
     {
-        title: "ReBind",
+        title: "Tailwind Marketplace",
         description:
-            "A note-taking SaaS application built with Next.js 14.",
-        tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Typescript"],
-        imageUrl: rebind,
-        githublink: "https://github.com/saurabhparyani/rebind",
-        website: "https://rebind.saurabhparyani.dev/",
+            "A digital marketplace for tailwind components built using Nextjs 14.",
+        tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Resend","Typescript"],
+        imageUrl: tailwindmarketplace,
+        githublink: "https://github.com/saurabhparyani/tailwind-marketplace",
+        website: "https://tailwind-marketplace.saurabhparyani.dev/",
         githubicon: SiGithub,
         websiteicon: ImLink
     },
+    
     {
         title: "Tonic",
         description:
@@ -110,6 +114,17 @@ export const projectsData = [
         imageUrl: txtr,
         githublink: "https://github.com/saurabhparyani/txtr",
         website: "https://txtr.vercel.app/",
+        githubicon: SiGithub,
+        websiteicon: ImLink
+    },
+    {
+        title: "ReBind",
+        description:
+            "A note-taking SaaS application built with Next.js 14.",
+        tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Typescript"],
+        imageUrl: rebind,
+        githublink: "https://github.com/saurabhparyani/rebind",
+        website: "https://rebind.saurabhparyani.dev/",
         githubicon: SiGithub,
         websiteicon: ImLink
     },
