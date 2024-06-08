@@ -4,8 +4,8 @@ import rebind from "@/public/rebind_image.png";
 import tailwindmarketplace from "@/public/tailwind-marketplace.png";
 import txtr from "@/public/txtr.png";
 import tonic from "@/public/tonic.png"
-import blogappimg from "@/public/blogapp_image.png"
 import blogapp from "@/public/blogapp.png"
+import trackrupee from "@/public/trackrupee.png"
 
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -103,6 +103,17 @@ export const projectsData = [
         imageUrl: portfolio,
         githublink: "https://github.com/saurabhparyani/portfolio",
         website: "https://saurabhparyani.dev",
+        githubicon: SiGithub,
+        websiteicon: ImLink
+    },
+    {
+        title: "Track Rupee",
+        description:
+            "A budget tracking app to help you manage and control your expenses and income!",
+        tags: ["Next.js","Prisma","Tanstack Query", "Clerk", "Tailwind", "Shadcn", "Recharts", "Zod"],
+        imageUrl: trackrupee,
+        githublink: "https://github.com/saurabhparyani/track-rupee",
+        website: "https://track-rupee.vercel.app/",
         githubicon: SiGithub,
         websiteicon: ImLink
     },
