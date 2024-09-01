@@ -6,6 +6,7 @@ import txtr from "@/public/txtr.png";
 import tonic from "@/public/tonic.png"
 import blogapp from "@/public/blogapp.png"
 import trackrupee from "@/public/trackrupee.png"
+import stockup from "@/public/stockup.png"
 
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -21,10 +22,10 @@ export const links = [
     //     name: "About",
     //     hash: "#about",
     // },
-    // {
-    //     name: "Experience",
-    //     hash: "#experience",
-    // },
+    {
+        name: "Experience",
+        hash: "#experience",
+    },
     {
         name: "Projects",
         hash: "#projects",
@@ -39,17 +40,17 @@ export const links = [
     },
 ] as const;
 
-// export const experiencesData = [
-//     {
-//         title: "Web Developer Intern • Wells Fargo",
-//         location: "Hyderabad, India",
-//         description:
-//             "I worked as a web developer intern for my client, Wells Fargo and worked on...",
-//         icon: React.createElement(CgWorkAlt),
-//         date: "Jan 2024 - April 2024",
-//     },
+export const experiencesData = [
+    {
+        title: "Web Developer Intern • Wells Fargo",
+        location: "Hyderabad, India",
+        description:
+            "I worked as a web developer intern for my client, Wells Fargo and worked on their ATM/Branch Locator feature, improving page load times by an average of 4 seconds and enhancing the UI with React.js and CSS. This project also involved integrating Bing Maps and implementing client-side filtering, which reduced server load by 50%.",
+        icon: React.createElement(CgWorkAlt),
+        date: "Jan 2024 - April 2024",
+    },
 
-// ] as const;
+] as const;
 
 
 
@@ -71,6 +72,8 @@ export const socials = [
     }
 ] as const;
 
+type Tab = "Featured" | "Full-Stack" | "Frontend" | "Backend" | "Miscellaneous";
+
 export const projectsData = [
     {
         title: "Tailwind Marketplace",
@@ -81,7 +84,8 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/tailwind-marketplace",
         website: "https://tailwind-marketplace.saurabhparyani.dev/",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
     },
     
     {
@@ -93,7 +97,20 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/tonic",
         website: "https://tonic.saurabhparyani.dev",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
+    },
+    {
+        title: "StockUp",
+        description:
+            "A comprehensive platform to manage and track your inventory products",
+        tags: ["Next.js", "Node.js", "Express", "AWS EC2", "AWS RDS", "AWS S3", "AWS Amplify", "Recharts"],
+        imageUrl: stockup,
+        githublink: "https://github.com/saurabhparyani/stockup",
+        website: "https://main.d3p5lqo99idtuu.amplifyapp.com/",
+        githubicon: SiGithub,
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
     },
     {
         title: "Portfolio",
@@ -104,7 +121,9 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/portfolio",
         website: "https://saurabhparyani.dev",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Frontend"] as Tab[],
+
     },
     {
         title: "Track Rupee",
@@ -115,7 +134,8 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/track-rupee",
         website: "https://track-rupee.vercel.app/",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
     },
     {
         title: "TXTR",
@@ -126,7 +146,8 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/txtr",
         website: "https://txtr.vercel.app/",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
     },
     {
         title: "ReBind",
@@ -137,7 +158,9 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/rebind",
         website: "https://rebind.saurabhparyani.dev/",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Full-Stack"] as Tab[],
+
     },
     {
         title: "blogapp",
@@ -148,35 +171,32 @@ export const projectsData = [
         githublink: "https://github.com/saurabhparyani/blogapp",
         website: "https://blog-saurabhparyani.vercel.app/",
         githubicon: SiGithub,
-        websiteicon: ImLink
+        websiteicon: ImLink,
+        projectTabs: ["Full-Stack"] as Tab[],
     },
    
 ] as const;
 
 export const skillsData = [
-    "HTML",
-    "CSS",
+    "HTML/CSS",
     "JavaScript",
     "TypeScript",
     "Python",
     "Node.js",
     "Express",
-    "Honojs",
-    "React",
+    "React.js",
+    "Web Sockets",
     "Next.js",
     "Git",
-    "Tailwind",
+    "TailwindCSS",
     "Zod",
     "Prisma",
     "MongoDB",
-    "Recoil",
     "Redux",
     "PostgreSQL",
     "Redis",
+    "MySQl",
     "Docker",
-    "Turborepo",
     "AWS",
-    "Cloudflare Workers",
-    "Django",
     "Framer Motion",
 ] as const;
