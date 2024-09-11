@@ -7,6 +7,7 @@ import tonic from "@/public/tonic.png"
 import blogapp from "@/public/blogapp.png"
 import trackrupee from "@/public/trackrupee.png"
 import stockup from "@/public/stockup.png"
+import lyra from "@/public/lyra.png"
 
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -173,6 +174,18 @@ export const projectsData = [
         githubicon: SiGithub,
         websiteicon: ImLink,
         projectTabs: ["Full-Stack"] as Tab[],
+    },
+    {
+        title: "LyraAI",
+        description:
+            "A pure frontend app built to demonstrate an eye catching landing page for an AI company.",
+        tags: ["React.js", "Next.js", "Framer Motion", "Lottie Files", "TailwindCSS"],
+        imageUrl: lyra,
+        githublink: "https://github.com/saurabhparyani/lyra-ai-homepage",
+        website: "https://lyra-ai-seo.vercel.app/",
+        githubicon: SiGithub,
+        websiteicon: ImLink,
+        projectTabs: ["Frontend"] as Tab[],
     },
    
 ] as const;
