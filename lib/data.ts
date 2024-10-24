@@ -8,6 +8,7 @@ import blogapp from "@/public/blogapp.png"
 import trackrupee from "@/public/trackrupee.png"
 import stockup from "@/public/stockup.png"
 import lyra from "@/public/lyra.png"
+import buzz from "@/public/buzz.png"
 
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -80,10 +81,22 @@ export const projectsData = [
         title: "Tailwind Marketplace",
         description:
             "A digital marketplace for tailwind components built using Nextjs 14.",
-        tags: ["Next.js", "Kinde", "Supabase", "Prisma", "Tailwind", "Shadcn UI", "Stripe", "Resend","Typescript"],
+        tags: ["Next.js", "Kinde", "Prisma", "TailwindCSS", "Shadcn UI", "Stripe", "Resend","Typescript"],
         imageUrl: tailwindmarketplace,
         githublink: "https://github.com/saurabhparyani/tailwind-marketplace",
         website: "https://tailwind-marketplace.saurabhparyani.dev/",
+        githubicon: SiGithub,
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Full-Stack"] as Tab[],
+    },
+    {
+        title: "buzz.",
+        description:
+            "A video sharing platform built using Nestjs and GraphQL.",
+        tags: ["Nestjs", "GraphQL", "ReactJs","PostgreSQL","Typescript","Tanstack Router", "AWS S3", "Zustand"],
+        imageUrl: buzz,
+        githublink: "https://github.com/saurabhparyani/buzzvid",
+        website: "https://buzz-ruby.vercel.app/",
         githubicon: SiGithub,
         websiteicon: ImLink,
         projectTabs: ["Featured", "Full-Stack"] as Tab[],
@@ -99,7 +112,7 @@ export const projectsData = [
         website: "https://tonic.saurabhparyani.dev",
         githubicon: SiGithub,
         websiteicon: ImLink,
-        projectTabs: ["Featured", "Full-Stack"] as Tab[],
+        projectTabs: ["Full-Stack"] as Tab[],
     },
     {
         title: "StockUp",
@@ -111,7 +124,7 @@ export const projectsData = [
         website: "https://main.d3p5lqo99idtuu.amplifyapp.com/",
         githubicon: SiGithub,
         websiteicon: ImLink,
-        projectTabs: ["Featured", "Full-Stack"] as Tab[],
+        projectTabs: ["Full-Stack"] as Tab[],
     },
     {
         title: "Portfolio",
@@ -200,12 +213,15 @@ export const skillsData = [
     "React.js",
     "Web Sockets",
     "Next.js",
+    "Nestjs",
+    "GraphQL",
     "Git",
     "TailwindCSS",
     "Zod",
     "Prisma",
     "MongoDB",
     "Redux",
+    "Zustand",
     "PostgreSQL",
     "Redis",
     "MySQl",
