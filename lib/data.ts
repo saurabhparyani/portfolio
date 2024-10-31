@@ -9,6 +9,9 @@ import trackrupee from "@/public/trackrupee.png"
 import stockup from "@/public/stockup.png"
 import lyra from "@/public/lyra.png"
 import buzz from "@/public/buzz.png"
+import avent from "@/public/avent.png"
+
+
 
 import portfolio from "@/public/portfolio.png";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -74,7 +77,7 @@ export const socials = [
     }
 ] as const;
 
-type Tab = "Featured" | "Full-Stack" | "Frontend" | "Backend" | "Miscellaneous";
+type Tab = "Featured" | "Full-Stack" | "Mobile" | "Frontend" | "Backend" | "Miscellaneous";
 
 export const projectsData = [
     {
@@ -100,6 +103,19 @@ export const projectsData = [
         githubicon: SiGithub,
         websiteicon: ImLink,
         projectTabs: ["Featured", "Full-Stack"] as Tab[],
+    },
+
+    {
+        title: "Avent",
+        description:
+            "An AI travel planner built using React Native and Gemini",
+        tags: ["React Native", "Expo Router", "TypeScript", "Gemini AI", "Firebase", "TailwindCSS"],
+        imageUrl: avent,
+        githublink: "https://github.com/saurabhparyani/avent",
+        website: "https://drive.google.com/file/d/1UbQjPsd1CdqOqducUJLfNspNC3GU2N6Z/view",
+        githubicon: SiGithub,
+        websiteicon: ImLink,
+        projectTabs: ["Featured", "Mobile"] as Tab[],
     },
     
     {
@@ -211,6 +227,8 @@ export const skillsData = [
     "Node.js",
     "Express",
     "React.js",
+    "React Native",
+    "Expo Router",
     "Web Sockets",
     "Next.js",
     "Nestjs",

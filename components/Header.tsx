@@ -61,7 +61,7 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-      <div className="flex gap-7 -mt-8 ml-5  lg:-mt-48 md:mr-20">
+      <div className="flex gap-7 mb-9 md:mb-0 mr-28 lg:-mt-48 md:mr-20">
         {socials.map((social, index) => {
           const Icon = social.Icon;
           return (
@@ -71,7 +71,7 @@ export default function Header() {
               key={index}
               aria-label={social.label}
             >
-              <Icon className="w-8 h-8  hover:scale-125 transition-all" />
+              <Icon className="w-6 h-6 md:w-8 md:h-8  hover:scale-125 transition-all" />
             </Link>
           );
         })}

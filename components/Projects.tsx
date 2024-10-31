@@ -17,6 +17,7 @@ export default function Projects() {
   const tabs = [
     "Featured",
     "Full-Stack",
+    "Mobile",
     "Frontend",
     "Backend",
     "Miscellaneous",
