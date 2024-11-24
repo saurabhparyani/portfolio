@@ -47,6 +47,15 @@ export const links = [
 
 export const experiencesData = [
     {
+        title: "Full Stack Developer • SleekSyntax",
+        location: "Remote", 
+        description:
+            "I'm a full stack developer at SleekSyntax, working on a finance mobile application using React Native and Tailwind CSS. I build and maintain scalable cross-platform features focused on delivering an exceptional user experience.",
+        icon: React.createElement(CgWorkAlt),
+        date: "Nov 2024 - Present",
+    },
+
+    {
         title: "Web Developer Intern • Wells Fargo",
         location: "Hyderabad, India",
         description:
@@ -159,7 +168,7 @@ export const projectsData = [
         title: "Track Rupee",
         description:
             "A budget tracking app to help you manage and control your expenses and income!",
-        tags: ["Next.js","Prisma","Tanstack Query", "Clerk", "Tailwind", "Shadcn", "Recharts", "Zod"],
+        tags: ["Next.js","Prisma","Tanstack Query", "Clerk", "Tailwind", "Recharts", "Zod"],
         imageUrl: trackrupee,
         githublink: "https://github.com/saurabhparyani/track-rupee",
         website: "https://track-rupee.vercel.app/",

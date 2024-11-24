@@ -31,15 +31,21 @@ export default function About() {
           <span>{"."}</span>
         </h1>
         <p className="w-auto text-2xl pt-8 dark:text-gray-300">
-          <span>{"I'm an aspiring"}</span>
-          <span className="font-bold">{" full-stack developer"}</span>
-          <span> {"dedicated to delivering"} </span>
-          <span className="font-bold">{"functional web applications"}</span>
-          <span>
+          <span>{"I'm a"}</span>
+          <span className="font-bold">{" full-stack developer at "}</span>
+          <Link href="https://sleeksyntax.com" target="_blank">
+            <span className="underline underline-offset-4 hover:scale-105 transition font-bold">
+              {" SleekSyntax!"}
+            </span>
+          </Link>
+          <span> {"proficient in "} </span>
+          <span> {" building super cool web apps using "}</span>
+          <span className="font-bold">{"Next.js and React! "}</span>
+          {/* <span>
             {
-              " with a passion for clean code and exploring cutting-edge technologies."
+              ""
             }
-          </span>
+          </span> */}
         </p>
         <motion.div
           className="flex sm:flex-row justify-start gap-4 pt-5 text-lg font-medium"
@@ -84,8 +90,8 @@ export default function About() {
             <Image
               src={img}
               alt="Saurabh"
-              width={680}
-              height={580}
+              width={520}
+              height={320}
               quality={100}
               priority={true}
               className="rounded-full object-cover shadow-xl"

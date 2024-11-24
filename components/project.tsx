@@ -48,7 +48,7 @@ export default function Project({
               <WebsiteIcon className="ml-2 w-6 h-6 sm:w-8 sm:h-8 hover:scale-105 transition-all" />
             </Link>
           </div>
-          <p className="mt-4 leading-relaxed text-sm sm:text-base text-gray-700 dark:text-gray-400">
+          <p className="mt-4 leading-relaxed text-sm sm:text-base text-gray-700 dark:text-gray-400 font-semibold">
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
