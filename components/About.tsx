@@ -33,14 +33,17 @@ export default function About() {
         <p className="w-auto text-2xl pt-8 dark:text-gray-300">
           <span>{"I'm a"}</span>
           <span className="font-bold">{" full-stack developer at "}</span>
-          <Link href="https://sleeksyntax.com" target="_blank">
+          <Link href="https://tribechat.com/" target="_blank">
             <span className="underline underline-offset-4 hover:scale-105 transition font-bold">
-              {" SleekSyntax!"}
+              {" Tribe"}
             </span>
           </Link>
           <span> {"proficient in "} </span>
-          <span> {" building super cool web apps using "}</span>
-          <span className="font-bold">{"Next.js and React! "}</span>
+          <span>
+            {" "}
+            {" building a modern group chat app, upskilling myself in "}
+          </span>
+          <span className="font-bold">{"React Native and Ruby on Rails!"}</span>
           {/* <span>
             {
               ""
