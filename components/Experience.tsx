@@ -28,7 +28,7 @@ export default function Experience() {
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: index * 0.3 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
             className="mb-8"
           >
             <Card>

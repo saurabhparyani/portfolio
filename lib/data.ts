@@ -60,15 +60,6 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "Nov 2024 - Dec 2024",
   },
-
-  {
-    title: "Web Developer Intern • Wells Fargo",
-    location: "Hyderabad, India",
-    description:
-      "I worked as a web developer intern for my client, Wells Fargo and worked on their ATM/Branch Locator feature, improving page load times by an average of 4 seconds and enhancing the UI with React.js and CSS. This project also involved integrating Bing Maps and implementing client-side filtering, which reduced server load by 50%.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Jan 2024 - April 2024",
-  },
 ] as const;
 
 export const socials = [
