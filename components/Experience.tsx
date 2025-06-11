@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -9,11 +9,11 @@ import { motion } from "framer-motion";
 import { Card } from "./Card";
 
 export default function Experience() {
-  const { ref, inView } = useSectionInView("Experience");
+  const { ref, inView } = useSectionInView("Experience", 0.3);
   const { theme } = useTheme();
   const [isVisible, setIsVisible] = React.useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       setIsVisible(true);
     }
