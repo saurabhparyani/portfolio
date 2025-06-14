@@ -7,6 +7,8 @@ import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import { Card } from "./Card";
+import Link from "next/link";
+import { ShimmerButton } from "./ui/shimmer-button";
 
 export default function Experience() {
   const { ref, inView } = useSectionInView("Experience", 0.3);
@@ -41,13 +43,35 @@ export default function Experience() {
                   >
                     {item.icon}
                   </div>
-                  <div>
-                    <h3 className="font-bold text-2xl mb-1 tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium">
+                  <div className="flex-1">
+                    <div className="flex flex-row items-center">
+                      <h3 className="font-bold text-2xl mb-1 tracking-tight">
+                        {item.title}
+                      </h3>
+                      <span className="font-bold text-2xl mb-1 tracking-tight hidden md:block mx-2">
+                        •
+                      </span>
+                      <Link href={item.companyLink} target="_blank">
+                        <h3 className="font-bold text-2xl mb-1 tracking-tight underline underline-offset-4 hover:scale-105 transition-transform duration-200">
+                          {item.company}
+                        </h3>
+                      </Link>
+                    </div>
+                    <p className="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 md:mb-0">
                       {item.date}
                     </p>
+                    {item.isCurrent && (
+                      <div className="md:hidden">
+                        <Link href={item.companyLink} target="_blank">
+                          <ShimmerButton
+                            borderRadius="12px"
+                            className="text-sm font-semibold tracking-wide"
+                          >
+                            View Journey
+                          </ShimmerButton>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <p className="font-semibold text-xl mb-3 text-gray-800 dark:text-gray-200">
@@ -57,6 +81,18 @@ export default function Experience() {
                   {item.description}
                 </p>
               </div>
+              {item.isCurrent && (
+                <div className="hidden md:flex justify-end top-0 absolute right-0 p-8">
+                  <Link href={item.companyLink} target="_blank">
+                    <ShimmerButton
+                      borderRadius="12px"
+                      className="text-sm font-semibold tracking-wide"
+                    >
+                      View Journey
+                    </ShimmerButton>
+                  </Link>
+                </div>
+              )}
             </Card>
           </motion.div>
         ))}

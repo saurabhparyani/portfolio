@@ -21,10 +21,6 @@ export const links = [
     name: "Home",
     hash: "#home",
   },
-  // {
-  //   name: "About",
-  //   hash: "#about",
-  // },
   {
     name: "Experience",
     hash: "#experience",
@@ -45,16 +41,22 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Full Stack Developer • Tribe",
-    location: "Remote",
+    title: "Full Stack Developer",
+    company: "Tribe",
+    isCurrent: true,
+    companyLink: "https://tribechat.com/",
+    location: "United States, Remote",
     description:
       "Here at Tribe, I'm building a next-gen group chat app using React Native, while also picking up Ruby on Rails to build the backend. Among some of the exciting features I've made here, one of my favorites is going to be building a complete end-to-end invite flow, making it super easy for users to invite their friends to the app. I've also been a key contributor to writing the code for some of the frequent emails we send out to our users in Ruby using the ActionMailer gem. I've integrated Perplexity and OpenAI to generate a link summary for every article posted in our chat and polished the UI of how those links appear, giving the ability to show/hide the summary for everyone.",
     icon: React.createElement(CgWorkAlt),
     date: "Jan 2025 - Present",
   },
   {
-    title: "Full Stack Developer • SleekSyntax",
-    location: "Remote",
+    title: "Full Stack Developer",
+    company: "SleekSyntax",
+    companyLink: "https://sleeksyntax.com/",
+    isCurrent: false,
+    location: "Switzerland, Remote",
     description:
       "As a full stack developer at SleekSyntax, I've had hands-on experience building a finance mobile application using React Native and Tailwind CSS, writing APIs in Nestjs. I also set up automated CI/CD pipelines using GitHub Actions for seamless integration and deployment. For storage and real-time updates, I integrated Firebase and Firestore.",
     icon: React.createElement(CgWorkAlt),
