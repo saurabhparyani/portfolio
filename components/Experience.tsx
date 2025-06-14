@@ -45,7 +45,7 @@ export default function Experience() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-row items-center">
-                      <h3 className="font-bold text-2xl mb-1 tracking-tight">
+                      <h3 className="font-bold text-2xl mb-1 tracking-tight pr-1">
                         {item.title}
                       </h3>
                       <span className="font-bold text-2xl mb-1 tracking-tight hidden md:block mx-2">
@@ -60,7 +60,7 @@ export default function Experience() {
                     <p className="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 md:mb-0">
                       {item.date}
                     </p>
-                    {item.isCurrent && (
+                    {/* {item.isCurrent && (
                       <div className="md:hidden">
                         <Link href={item.companyLink} target="_blank">
                           <ShimmerButton
@@ -71,7 +71,7 @@ export default function Experience() {
                           </ShimmerButton>
                         </Link>
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
                 <p className="font-semibold text-xl mb-3 text-gray-800 dark:text-gray-200">
@@ -81,9 +81,9 @@ export default function Experience() {
                   {item.description}
                 </p>
               </div>
-              {item.isCurrent && (
+              {/* {item.isCurrent && (
                 <div className="hidden md:flex justify-end top-0 absolute right-0 p-8">
-                  <Link href={item.companyLink} target="_blank">
+                  <Link href={`/journey/${item.company.toLowerCase()}`}>
                     <ShimmerButton
                       borderRadius="12px"
                       className="text-sm font-semibold tracking-wide"
@@ -92,7 +92,7 @@ export default function Experience() {
                     </ShimmerButton>
                   </Link>
                 </div>
-              )}
+              )} */}
             </Card>
           </motion.div>
         ))}
