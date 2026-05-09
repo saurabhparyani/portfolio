@@ -4,38 +4,60 @@ import {
   Outlet,
   Scripts,
   createRootRoute,
-} from '@tanstack/react-router'
-import { Toaster } from 'react-hot-toast'
-import * as React from 'react'
+} from "@tanstack/react-router";
+import { Toaster } from "react-hot-toast";
+import * as React from "react";
 
-import ThemeContextProvider from '@/context/theme-context'
-import ThemeSwitch from '@/components/theme-switch'
-import Loader from '@/components/Loader'
-import ScrollToTop from '@/components/scroll-to-top'
+import ThemeContextProvider from "@/context/theme-context";
+import ThemeSwitch from "@/components/theme-switch";
+import Loader from "@/components/Loader";
+import ScrollToTop from "@/components/scroll-to-top";
 
-import appCss from '@/src/styles/globals.css?url'
+import appCss from "@/src/styles/globals.css?url";
+
+const SITE_URL = "https://saurabhparyani.dev";
+const SITE_TITLE = "Saurabh Paryani";
+const SITE_DESCRIPTION = "Full-stack web developer in the making!";
+const OG_IMAGE = `${SITE_URL}/portfolio.png`;
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Saurabh Paryani' },
-      { name: 'description', content: 'Full-stack web developer in the making!' },
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: SITE_TITLE },
+      { name: "description", content: SITE_DESCRIPTION },
+      { name: "author", content: "Saurabh Paryani" },
+      { name: "robots", content: "index, follow" },
+
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:site_name", content: SITE_TITLE },
+
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:url", content: SITE_URL },
+      { name: "twitter:title", content: SITE_TITLE },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:creator", content: "@saurabhbuilds" },
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: '' },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "canonical", href: SITE_URL },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap',
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap",
       },
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument() {
   return (
@@ -54,5 +76,5 @@ function RootDocument() {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
