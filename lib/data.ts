@@ -1,20 +1,20 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import rebind from "@/public/rebind_image.png";
-import tailwindmarketplace from "@/public/tailwind-marketplace.png";
-import txtr from "@/public/txtr.png";
-import tonic from "@/public/tonic.png";
-import blogapp from "@/public/blogapp.png";
-import trackrupee from "@/public/trackrupee.png";
-import stockup from "@/public/stockup.png";
-import lyra from "@/public/lyra.png";
-import buzz from "@/public/buzz.png";
-import avent from "@/public/avent.png";
-
-import portfolio from "@/public/portfolio.png";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiX } from "react-icons/si";
+import { FaLinkedin as SiLinkedin } from "react-icons/fa6";
 import { ImLink } from "react-icons/im";
-import { LuGraduationCap } from "react-icons/lu";
+
+const rebind = "/rebind_image.png";
+const tailwindmarketplace = "/tailwind-marketplace.png";
+const txtr = "/txtr.png";
+const tonic = "/tonic.png";
+const blogapp = "/blogapp.png";
+const trackrupee = "/trackrupee.png";
+const stockup = "/stockup.png";
+const lyra = "/lyra.png";
+const buzz = "/buzz.png";
+const avent = "/avent.png";
+const portfolio = "/portfolio.png";
 
 export const links = [
   {
@@ -32,10 +32,6 @@ export const links = [
   {
     name: "Skills",
     hash: "#skills",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
   },
 ] as const;
 

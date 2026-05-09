@@ -7,7 +7,6 @@ import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import { Card } from "./Card";
-import Link from "next/link";
 import { ShimmerButton } from "./ui/shimmer-button";
 
 export default function Experience() {
@@ -51,11 +50,11 @@ export default function Experience() {
                       <span className="font-bold text-2xl mb-1 tracking-tight hidden md:block mx-2">
                         •
                       </span>
-                      <Link href={item.companyLink} target="_blank">
+                      <a href={item.companyLink} target="_blank" rel="noreferrer">
                         <h3 className="font-bold text-2xl mb-1 tracking-tight underline underline-offset-4 hover:scale-105 transition-transform duration-200">
                           {item.company}
                         </h3>
-                      </Link>
+                      </a>
                     </div>
                     <p className="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 md:mb-0">
                       {item.date}

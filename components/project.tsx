@@ -2,9 +2,7 @@
 
 import { useRef } from "react";
 import { projectsData } from "@/lib/data";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -41,12 +39,12 @@ export default function Project({
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <div className="flex flex-row items-center">
             <h3 className="text-xl sm:text-4xl font-semibold">{title}</h3>
-            <Link href={githublink} target="_blank" aria-label="Github">
+            <a href={githublink} target="_blank" rel="noreferrer" aria-label="Github">
               <GithubIcon className="ml-4 w-6 h-6 sm:w-8 sm:h-8 hover:scale-105 transition-all" />
-            </Link>
-            <Link href={website} target="_blank" aria-label="Website">
+            </a>
+            <a href={website} target="_blank" rel="noreferrer" aria-label="Website">
               <WebsiteIcon className="ml-2 w-6 h-6 sm:w-8 sm:h-8 hover:scale-105 transition-all" />
-            </Link>
+            </a>
           </div>
           <p className="mt-4 leading-relaxed text-sm sm:text-base text-gray-700 dark:text-gray-400 font-semibold">
             {description}
@@ -63,10 +61,9 @@ export default function Project({
           </ul>
         </div>
 
-        <Image
+        <img
           src={imageUrl}
           alt="Project I worked on"
-          quality={95}
           className="absolute hidden sm:block top-8 -right-40 w-[482px] rounded-t-lg shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-even:right-[initial] group-even:-left-40"
         />
       </section>
