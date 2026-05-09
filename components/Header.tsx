@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { links, socials } from "@/lib/data";
-import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -14,7 +13,7 @@ export default function Header() {
     <div className="container flex items-center justify-between">
       <header className="z-[999] relative">
         <motion.div
-          className="fixed top-0 left-1/2 h-[3rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+          className="fixed top-0 left-1/2 h-[3rem] w-full rounded-none border border-white/40 bg-white/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950/75 dark:border-black/40"
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
         ></motion.div>
@@ -28,7 +27,7 @@ export default function Header() {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
               >
-                <Link
+                <a
                   className={clsx(
                     "flex w-full items-center text-xl justify-center p-2 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
                     {
@@ -55,7 +54,7 @@ export default function Header() {
                       }}
                     ></motion.span>
                   )}
-                </Link>
+                </a>
               </motion.li>
             ))}
           </ul>
@@ -65,14 +64,15 @@ export default function Header() {
         {socials.map((social, index) => {
           const Icon = social.Icon;
           return (
-            <Link
+            <a
               href={social.link}
               target="_blank"
+              rel="noreferrer"
               key={index}
               aria-label={social.label}
             >
               <Icon className="w-6 h-6 md:w-8 md:h-8  hover:scale-125 transition-all" />
-            </Link>
+            </a>
           );
         })}
       </div>

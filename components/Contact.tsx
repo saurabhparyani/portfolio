@@ -83,7 +83,6 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import toast from "react-hot-toast";
 import { FaPaperPlane } from "react-icons/fa";
-import Link from "next/link";
 
 export default function Contact() {
     const { ref } = useSectionInView("Contact");
@@ -115,10 +114,10 @@ export default function Contact() {
         setIsLoading(true);
         emailjs
             .send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+                import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+                import.meta.env.VITE_EMAILJS_USER_ID as string
             )
             .then
             ((response) => {
@@ -157,16 +156,16 @@ export default function Contact() {
 
             <p className="text-gray-700 -mt-6 dark:text-white/80">
                 Please contact me directly at{" "}
-                <Link className="underline" href="mailto:saurabhparyani64@gmail.com">
+                <a className="underline" href="mailto:saurabhparyani64@gmail.com">
                     saurabhparyani64@gmail.com
-                </Link>{" "}
+                </a>{" "}
                 or through this form.
             </p>
 
             <form onSubmit={sendEmail}>
                 <div className="mt-10 flex flex-col dark:text-black">
                     <input
-                        className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+                        className="h-14 px-4 rounded-lg borderBlack dark:bg-white/80 dark:focus:bg-white transition-all dark:outline-none"
                         name="senderEmail"
                         type="email"
                         value={email}
@@ -176,7 +175,7 @@ export default function Contact() {
                         placeholder="Your email"
                     />
                     <textarea
-                        className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+                        className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/80 dark:focus:bg-white transition-all dark:outline-none"
                         name="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
@@ -189,7 +188,7 @@ export default function Contact() {
                     {success && <div className="p-2 w-full text-center text-green-600 dark:text-green-500 text-sm">{success}</div>}
                     <button
                         type="submit"
-                        className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+                        className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white/10 disabled:scale-100 disabled:opacity-65"
                         disabled={isLoading}
                     >
                         {isLoading ? (
