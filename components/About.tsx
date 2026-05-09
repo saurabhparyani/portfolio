@@ -2,14 +2,11 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function About() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
@@ -50,18 +47,6 @@ export default function About() {
             delay: 0.1,
           }}
         >
-          <a
-            href="#contact"
-            className="group bg-gray-900 text-white px-5 py-2 text-sm md:text-base md:px-7 md:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-            onClick={() => {
-              setActiveSection("Contact");
-              setTimeOfLastClick(Date.now());
-            }}
-          >
-            Contact me here{" "}
-            <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-          </a>
-
           <a
             className="group bg-white px-5 py-2 text-sm md:text-base md:px-7 md:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
             href="/CV.pdf"
