@@ -1,10 +1,9 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 @utility borderBlack {
