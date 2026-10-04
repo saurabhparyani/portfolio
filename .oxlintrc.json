@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "react", "jsx-a11y", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "kebabCase"
+      }
+    ],
+    "import/no-default-export": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "regex": "^\\.{1,2}/",
+            "message": "Use the @/ alias instead of relative imports."
+          }
+        ]
+      }
+    ],
+    "typescript/consistent-type-imports": "error",
+    "typescript/explicit-module-boundary-types": "error",
+    "typescript/no-empty-function": "error",
+    "func-style": ["error", "expression"]
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "src/routeTree.gen.ts",
+    ".output/**",
+    ".nitro/**",
+    ".tanstack/**"
+  ]
+}
