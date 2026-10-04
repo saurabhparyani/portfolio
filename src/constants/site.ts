@@ -2,9 +2,10 @@ import { SOCIALS } from "@/constants/content";
 
 export const SITE_URL = "https://saurabhparyani.dev/";
 export const SITE_NAME = "Saurabh Paryani";
-export const SITE_TITLE = "Saurabh Paryani | Full-Stack Developer";
+export const SITE_TITLE =
+  "Saurabh Paryani | Full-Stack Developer · Escape Room Portfolio";
 export const SITE_DESCRIPTION =
-  "Saurabh Paryani is a full-stack developer building a modern group chat app at Tribe with React Native and Ruby on Rails.";
+  "Saurabh Paryani is a full-stack developer building a modern group chat app at Tribe with React Native and Ruby on Rails. His portfolio is an escape room: find the clue in each room to unlock the exit.";
 export const OG_IMAGE = `${SITE_URL}portfolio.png`;
 export const OG_IMAGE_WIDTH = 1097;
 export const OG_IMAGE_HEIGHT = 738;

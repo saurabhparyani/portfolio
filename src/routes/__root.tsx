@@ -1,4 +1,5 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { MotionConfig } from "motion/react";
 import type { ReactNode } from "react";
 
 import { NotFound } from "@/components/not-found";
@@ -25,10 +26,13 @@ const RootDocument = ({ children }: { children: ReactNode }): ReactNode => (
     <head>
       <HeadContent />
     </head>
-    <body className="bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50/90">
-      {children}
-      <ScrollToTop />
-      <ThemeSwitch />
+    <body className="relative font-sans text-ink antialiased">
+      {/* Respect the OS "reduce motion" setting for every Motion animation. */}
+      <MotionConfig reducedMotion="user">
+        {children}
+        <ScrollToTop />
+        <ThemeSwitch />
+      </MotionConfig>
       <Scripts />
     </body>
   </html>
@@ -72,7 +76,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@400..700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400..700&display=swap",
       },
     ],
     scripts: [
