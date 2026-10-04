@@ -14,11 +14,21 @@ const applySavedTheme = (): void => {
 // flash of the wrong theme. It must be a string because it runs before React loads.
 export const THEME_INIT_SCRIPT = `(${applySavedTheme.toString()})()`;
 
-export const toggleTheme = (): void => {
+const flipTheme = (): void => {
   const isDark = document.documentElement.classList.toggle("dark");
   try {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   } catch {
     // Storage can be blocked; the theme still applies for this visit.
   }
+};
+
+/** Toggles the theme, crossfading with the View Transitions API where supported. */
+export const toggleTheme = (): void => {
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("startViewTransition" in document)) {
+    flipTheme();
+    return;
+  }
+  document.startViewTransition(flipTheme);
 };

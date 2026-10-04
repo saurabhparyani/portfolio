@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { name: "Home", hash: "#home" },
   { name: "Experience", hash: "#experience" },
   { name: "Skills", hash: "#skills" },
+  { name: "Exit", hash: "#exit" },
 ] as const;
 
 export type SectionName = (typeof NAV_LINKS)[number]["name"];
@@ -20,13 +21,15 @@ export const EXPERIENCES = [
     date: "Jan 2025 - Present",
   },
   {
-    title: "Full Stack Developer",
+    title: "Intern",
     company: "SleekSyntax",
     companyLink: "https://sleeksyntax.com/",
     location: "Switzerland, Remote",
     description:
-      "As a full stack developer at SleekSyntax, I've had hands-on experience building a finance mobile application using React Native and Tailwind CSS, writing APIs in Nestjs. I also set up automated CI/CD pipelines using GitHub Actions for seamless integration and deployment. For storage and real-time updates, I integrated Firebase and Firestore.",
+      "As an intern at SleekSyntax, I've had hands-on experience building a finance mobile application using React Native and Tailwind CSS, writing APIs in Nestjs. I also set up automated CI/CD pipelines using GitHub Actions for seamless integration and deployment. For storage and real-time updates, I integrated Firebase and Firestore.",
     date: "Nov 2024 - Dec 2024",
+    // Stamped inside this (initially locked) file; see `CLUES.triangle`.
+    clue: "triangle",
   },
 ] as const;
 
@@ -76,3 +79,35 @@ export const SKILLS = [
   "AWS",
   "Framer Motion",
 ] as const;
+
+export const FIRST_NAME = "Saurabh";
+
+const VOWELS = new Set(["A", "E", "I", "O", "U"]);
+
+// The exit puzzle. Rooms I and III have a tag with a symbol and a riddle;
+// Room II's clue is stamped inside a locked case file. The lock's wheels are marked with the same symbols in a different
+// order. Digits are derived from the content where possible, so the puzzle
+// stays solvable if the content changes.
+export const CLUES = {
+  // Room I: the cryptex. S-A-U-R-A-B-H has three.
+  circle: {
+    riddle: "= vowels on my dials",
+    digit: [...FIRST_NAME.toUpperCase()].filter((char) => VOWELS.has(char))
+      .length,
+  },
+  // Room II: stamped inside the SleekSyntax file (Nov–Dec 2024).
+  triangle: {
+    stamp: "= months on this case",
+    digit: 2,
+  },
+  // Room III: Ruby on Rails, React.js, React Native, Redux, Redis.
+  diamond: {
+    riddle: "= keys that start with R",
+    digit: SKILLS.filter((skill) => skill.startsWith("R")).length,
+  },
+} as const;
+
+export type ClueName = keyof typeof CLUES;
+
+/** Left-to-right order of the wheels on the exit lock. */
+export const WHEEL_ORDER = ["triangle", "diamond", "circle"] as const;

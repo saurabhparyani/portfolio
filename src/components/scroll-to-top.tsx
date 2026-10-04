@@ -13,7 +13,7 @@ const getSnapshot = (): boolean => window.scrollY > 300;
 const getServerSnapshot = (): boolean => false;
 
 const scrollToTop = (): void => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0 });
 };
 
 export const ScrollToTop: FC = () => {
@@ -27,11 +27,12 @@ export const ScrollToTop: FC = () => {
 
   return (
     <button
-      className="fixed bottom-20 right-5 bg-white/80 w-[3rem] h-[3rem] backdrop-blur-[0.5rem] border border-slate-400/40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 z-50"
+      type="button"
+      className="fixed right-5 bottom-5 z-40 flex size-11 items-center justify-center rounded-full border border-rule bg-panel/85 text-muted shadow-lg backdrop-blur-md transition hover:-translate-y-0.5 hover:text-brass"
       onClick={scrollToTop}
-      aria-label="Scroll to top"
+      aria-label="Back to Room I"
     >
-      <FaArrowUp />
+      <FaArrowUp className="size-3.5" />
     </button>
   );
 };

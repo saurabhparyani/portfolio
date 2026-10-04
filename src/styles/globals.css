@@ -2,10 +2,80 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-body {
-  font-family: "Mulish", sans-serif;
+/*
+ * Two calm themes: "Daylight" (paper + brass) and "Lamplight" (warm walnut +
+ * brass). Colors are CSS variables so every utility below follows the .dark
+ * class on <html> without per-element dark: variants.
+ */
+:root {
+  --paper: #f4efe4;
+  --panel: #fbf8f1;
+  --ink: #241f19;
+  --muted: #6d6458;
+  --rule: #ddd3c1;
+  --brass: #a8762a;
+  --brass-soft: #e9d6ae;
+  --steel: #8a8d91;
+  --grid: rgb(36 31 25 / 0.05);
 }
 
-@utility borderBlack {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.dark {
+  --paper: #1c1915;
+  --panel: #25211c;
+  --ink: #ede5d6;
+  --muted: #a89d8b;
+  --rule: #3a342c;
+  --brass: #d6a75a;
+  --brass-soft: #4a3c25;
+  --steel: #7d8084;
+  --grid: rgb(237 229 214 / 0.035);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-steel: var(--steel);
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--paper);
+  /* Faint blueprint grid. */
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+::selection {
+  background: var(--brass-soft);
+}
+
+/* Theme changes crossfade through the View Transitions API. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

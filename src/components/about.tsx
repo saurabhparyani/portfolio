@@ -2,7 +2,17 @@ import { motion } from "motion/react";
 import type { FC } from "react";
 import { HiDownload } from "react-icons/hi";
 
+import { ClueTag } from "@/components/clue-tag";
+import { Cryptex } from "@/components/cryptex";
+import { DialFrame } from "@/components/dial-frame";
+import { PillLink } from "@/components/pill-link";
+import { FIRST_NAME, SOCIALS } from "@/constants/content";
 import { useSectionInView } from "@/hooks/active-section";
+
+const RISE = {
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+};
 
 export const About: FC = () => {
   const sectionInView = useSectionInView("Home");
@@ -11,65 +21,80 @@ export const About: FC = () => {
     <motion.section
       {...sectionInView}
       id="home"
-      className="min-h-[60vh] flex flex-col md:flex-row items-center scroll-mt-36"
+      className="flex min-h-[calc(100svh-4rem)] w-full max-w-5xl scroll-mt-36 flex-col-reverse items-center justify-center gap-20 py-12 md:gap-12 md:flex-row md:justify-between"
     >
-      <div className="flex flex-col md:ml-40 mb-8 md:mb-0">
-        <h1 className="text-4xl lg:text-7xl font-bold">
-          Hello there! 👋
+      <div className="max-w-xl">
+        <motion.p
+          {...RISE}
+          className="font-mono text-xs tracking-[0.3em] text-brass uppercase"
+        >
+          Room I · The introduction
+        </motion.p>
+        <h1 className="mt-4 font-display text-4xl leading-tight font-medium sm:text-5xl">
+          Hi, I'm
           <br />
-          I'm{" "}
-          <span className="underline underline-offset-8 decoration-black dark:decoration-white">
-            Saurabh
+          <span className="mt-2 inline-block font-mono text-3xl font-semibold sm:text-5xl">
+            <Cryptex word={FIRST_NAME} />
           </span>
-          .
         </h1>
-        <p className="w-auto text-2xl pt-8 dark:text-gray-300">
-          I'm a <strong>full-stack developer</strong> at{" "}
+        <motion.p
+          {...RISE}
+          transition={{ delay: 0.3 }}
+          className="mt-6 text-lg leading-relaxed text-muted"
+        >
+          A <strong className="text-ink">full-stack developer</strong> at{" "}
           <a
             href="https://tribechat.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-4 font-bold"
+            className="font-semibold text-ink underline decoration-brass/60 underline-offset-4 transition-colors hover:decoration-brass"
           >
             Tribe
-          </a>{" "}
-          building a modern group chat app, upskilling myself in{" "}
-          <strong>React Native and Ruby on Rails!</strong>
-        </p>
-        <motion.div
-          className="flex sm:flex-row justify-start gap-4 pt-5 text-lg font-medium"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          <a
-            className="group bg-white px-5 py-2 text-sm md:text-base md:px-7 md:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-            href="/CV.pdf"
-            download
-          >
-            Download CV
-            <HiDownload
-              aria-hidden
-              className="opacity-60 group-hover:translate-y-1 transition"
-            />
           </a>
+          , building a modern group chat app with{" "}
+          <strong className="text-ink">React Native</strong> and{" "}
+          <strong className="text-ink">Ruby on Rails</strong>. Have a look
+          around. Every room hides a clue, and the exit is locked.
+        </motion.p>
+        <motion.div
+          {...RISE}
+          transition={{ delay: 0.45 }}
+          className="mt-8 flex flex-wrap items-center gap-3"
+        >
+          <PillLink href="/CV.pdf" download>
+            <HiDownload aria-hidden className="size-3.5" />
+            Download CV
+          </PillLink>
+          {SOCIALS.map(({ link, label, Icon }) => (
+            <a
+              key={label}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer me"
+              aria-label={label}
+              className="flex size-10 items-center justify-center rounded-full border border-rule bg-panel text-muted transition hover:-translate-y-0.5 hover:border-brass hover:text-brass"
+            >
+              <Icon className="size-4" />
+            </a>
+          ))}
         </motion.div>
       </div>
-      <motion.div
-        className="ml-4 mr-4 md:mr-44 w-48 md:w-auto"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "tween", duration: 0.2 }}
-      >
-        <img
-          src="/image.png"
-          alt="Portrait of Saurabh Paryani"
-          width={520}
-          height={512}
-          fetchPriority="high"
-          className="rounded-full object-cover shadow-xl"
+      <div className="relative">
+        <DialFrame>
+          <img
+            src="/image.webp"
+            alt="Portrait of Saurabh Paryani"
+            width={819}
+            height={806}
+            fetchPriority="high"
+            className="size-full rounded-full object-cover"
+          />
+        </DialFrame>
+        <ClueTag
+          clue="circle"
+          className="absolute top-[97%] left-1/2 -translate-x-1/2"
         />
-      </motion.div>
+      </div>
     </motion.section>
   );
 };
